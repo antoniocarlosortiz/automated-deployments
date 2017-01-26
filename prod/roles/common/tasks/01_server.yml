@@ -1,0 +1,10 @@
+##
+# Update the DNF package cache and install packages as a root user
+##
+- name: Install required packages
+  apt: name={{item}} state=latest
+  become: yes
+  with_items:
+    - vim
+    - python-pip
+    - python-dev

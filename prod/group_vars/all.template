@@ -1,0 +1,34 @@
+# App Name
+app_name: <your_django_project_name>
+
+# Deployer User and Groups
+deployer_user: deployer
+deployer_group: deployers
+
+# SSH Keys Directory
+ssh_dir: <path/to/your/automated-deployments/ssh-keys>
+
+# Github Code's Repo URL
+code_repository_url: <https://github.com/realpython/django-bootstrap>
+
+# App Directory
+app_dir: /home/{{ deployer_user }}/{{ app_name }}
+
+# DB Configuration
+# password should be updated
+db_url: postgresql://{{deployer_user}}:{{db_password}}@localhost/{{app_name}}
+db_password: changeme
+db_name: "{{ app_name }}"
+db_user: "{{ deployer_user }}"
+
+# Remote Server Details
+server_id: <123.456.789.10>
+
+# Deploy Dir in App Directory
+deploy_dir: "{{ app_dir }}/deploy"
+
+# WSGI Vars
+django_wsgi_module: config.wsgi
+django_settings_module: config.settings.production
+django_secret_key: changeme
+database_url: "{{ db_url }}"

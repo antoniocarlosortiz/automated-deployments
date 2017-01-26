@@ -1,0 +1,20 @@
+##
+# Set up all the dependencies in a virtualenv required by the Django app
+##
+- name: Install dependency packages
+  apt: name={{item}} state=latest
+  become: yes
+  with_items:
+    - python-pip
+    - libjpeg-dev
+
+- name: Upgrade pip
+  pip: name=pip state=latest
+  become: yes
+
+- name: Install dependencies
+  pip: requirements={{ app_dir }}/requirements.txt
+  become: yes
+
+- name: Create the .env file
+  template: src=env.j2 dest={{ app_dir }}/.env

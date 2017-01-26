@@ -1,0 +1,9 @@
+##
+# Set up systemd for executing gunicorn_start script
+##
+- name: write a gunicorn systemd service file
+  template: src=gunicorn.service dest=/etc/systemd/system/{{ app_name }}.service
+  become: yes
+  notify:
+    - restart app
+    - restart nginx
