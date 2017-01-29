@@ -5,8 +5,18 @@
   apt: name=nginx state=latest
   become: yes
 
-- name: Write nginx conf file
-  template: src=nginx.conf dest=/etc/nginx/conf.d/{{ app_name }}.conf
+- name: Write nginx conf file in sites-available
+  template: src=nginx.conf dest=/etc/nginx/sites-available/{{ app_name }}
+  become: yes
+
+- name: Create symlink of nginx conf file to sites-enabled
+  file: src=/etc/nginx/sites-available/{{ app_name }}
+        dest=/etc/nginx/sites-enabled/{{ app_name }}
+        state=link
+  become: yes
+
+- name: Rename default in sites-available to default.bak
+  command: mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
   become: yes
   notify:
     - restart nginx

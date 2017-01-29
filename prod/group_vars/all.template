@@ -21,9 +21,6 @@ db_password: changeme
 db_name: "{{ app_name }}"
 db_user: "{{ deployer_user }}"
 
-# Remote Server Details
-server_id: <123.456.789.10>
-
 # Deploy Dir in App Directory
 deploy_dir: "{{ app_dir }}/deploy"
 
