@@ -11,6 +11,10 @@ Usage
 3. fill up empty field in `group_vars/all.template` and `create a group_vars/all` file from it
 4. run deploy_prod.sh
 
+Access the server
+-----------------
+inside the project folder: `ssh -i ./ssh-keys/prod_key deployer@<ip address of server or whatever the name is in the config>`
+
 Things to do
 ------------
 - [x] adjust to work on ubuntu 16.04
