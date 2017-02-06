@@ -23,4 +23,5 @@ Things to do
 - [x] create systemd script for Gunicorn
 - [x] Move NGINX config from conf.d to sites-available
 - [x] Create a more detailed README.md
-- [ ] Update fabric to fix language not found bug on initial servers
+- [x] Update fabric to fix language not found bug on initial servers
+- [ ] Update ip address to be written on environment variables instead
