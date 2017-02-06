@@ -6,6 +6,7 @@ The automation process comes in two parts; the first one being the initial serve
 
 Usage
 -----
+1. access `ssh root@ip_address` then change the password. Digital Ocean droplets require an initial change of password.
 1. update ip address in `env.hosts` in `prod/fabfile.py`
 2. run `fab -f ./prod/fabfile.py start_provision`
 3. fill up empty field in `group_vars/all.template` and `create a group_vars/all` file from it
@@ -22,5 +23,4 @@ Things to do
 - [x] create systemd script for Gunicorn
 - [x] Move NGINX config from conf.d to sites-available
 - [x] Create a more detailed README.md
-- [ ] Update fabric to automatically set the new password of a remote server
 - [ ] Update fabric to fix language not found bug on initial servers
