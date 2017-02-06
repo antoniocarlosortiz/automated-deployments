@@ -14,7 +14,7 @@ abs_dir_path = os.path.dirname(
 env.user = 'root'
 
 # list of remote IP addresses
-env.hosts = ['<123.456.789.10>']
+env.hosts = ['138.197.122.110']
 
 # user group
 env.user_group = 'deployers'
@@ -48,7 +48,7 @@ def start_provision():
     create_deployer_user()
     upload_keys()
     run('service sshd reload')
-    # update_locales()
+    update_locales()
     upgrade_server()
 
 
@@ -91,10 +91,8 @@ def upload_keys():
     local(scp_command)
 
 
-# TODO: currently not work. fix issue in the future.
 def update_locales():
-    run(("export LANGUAGE=en_US.UTF-8; export LANG=en_US.UTF-8;"
-         " export LC_ALL=en_US.UTF-8; locale-gen en_US.UTF-8"))
+    run(('sudo locale-gen "en_US.UTF-8"'))
 
 
 def upgrade_server():
