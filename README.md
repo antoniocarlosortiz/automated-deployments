@@ -6,8 +6,8 @@ The automation process comes in two parts; the first one being the initial serve
 
 Usage
 -----
-1. add ip address in `env.hosts` in `prod/fabfile.py`
-2. run fabfile.py
+1. update ip address in `env.hosts` in `prod/fabfile.py`
+2. run `fab -f ./prod/fabfile.py start_provision`
 3. fill up empty field in `group_vars/all.template` and `create a group_vars/all` file from it
 4. run deploy_prod.sh
 
