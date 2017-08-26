@@ -14,7 +14,7 @@ Usage
 
 Access the server
 -----------------
-inside the project folder: `ssh -i ./ssh-keys/prod_key deployer@<ip address of server or whatever the name is in the config>`
+inside the project folder: `ssh -i ./ssh-keys/prod_key_<ip_address_of_server> deployer@<ip address of server or whatever the name is in the config>`
 
 Things to do
 ------------
